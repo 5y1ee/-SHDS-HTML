@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <script>
+        // onclick 이라는 속성
+        window.onload = function() {
+            console.log("페이지 로드 완료");
+
+            // 인라인 : 지양
+            let btn2 = document.querySelector("#btn2");
+            console.log(btn2);
+
+            // 속성 연결 : 유연, 유지보수 용이 // onclick 이라는 속성
+            btn2.onclick = function() {
+                alert("버튼2 클릭");
+                console.log("버튼2 클릭");
+            }
+
+            // 리스너 연결 방식
+            btn3.addEventListener("click", function() {
+                alert("버튼3 클릭");
+                console.log("버튼3 클릭");
+            });
+        }
+
+    </script>
+
+
+</head>
+<body>
+
+    <input type="button" onclick="alert('ff'); console.log('log'); /*JS 코드*/" value="Click Me!">
+    <input type="button" id="btn2" value="버튼2">
+    <input type="button" id="btn3" value="버튼3">
+    
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        width: 100px;
+        height: 100px;
+        padding: 10px;
+        border: 1px solid black;
+        margin: 50px;
+        /* width/height -> padding -> border -> margin 순서. 실제 넓이는 margin 제외한 값들의 합 */
+
+        text-align: center;
+        line-height: 100px;
+    }
+
+    #box1 {
+        padding: 10px 20px 30px 40px;
+
+        border-color: red blue green yellow;
+
+        /* content값 (기본값) */
+        box-sizing: content-box;
+    }
+
+    #box2 {
+        /* border까지 (content+padding+border) */
+        box-sizing: border-box;
+        box-shadow: 2px 2px 5px gray;
+    }
+
+    img {
+        border-radius: 50%;
+        /* border-radius: 50px; */
+    }
+
+</style>
+
+<body>
+
+    <div id="box1">박스</div>
+    <div id="box2">박스</div>
+
+    <img src="/img/snow.jpg">
+
+</body>
+</html>

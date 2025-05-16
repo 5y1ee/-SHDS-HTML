@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* * {
+            color: antiquewhite;
+        } */
+
+        #content {
+            color: blue;
+        }
+
+        .content {
+            color: red;
+        }
+
+        input[type="text"] {
+            background-color: green;
+        }
+
+        h1 {
+            color : blue;
+        }
+
+        /* 자식 */
+        #parent > div {
+            color : brown;
+        }
+
+        /* 자손 */
+        #parent div {
+            color : orange;
+        }
+
+        /* 다중 선택 */
+        #parent, #content {
+            background-color: thistle;
+        }
+
+        /* div면서 클래스가 xx 인 것 */
+        div.content {
+            color: yellow;
+        }
+
+        /* 형제 선택자 */
+        /* 뒤에 바로 하나 */
+        h1 + h2 {
+            color: red;
+        }
+        /* 뒤에 모든 것 */
+        h1 ~ h2 {
+            background-color: green;
+        }
+
+        /* 가상 선택자 */
+        a:link {
+            color: black;
+        }
+        a:visited {
+            color: gray;
+        }
+        a:hover {
+            color: red;
+        }
+
+        input[type="text"]:focus {
+            background-color: yellow;
+        }
+
+        #family > li {
+            color : olivedrab;
+        }
+        #family > li:first-child {
+            color : red;
+        }
+        #family > li:nth-child(2) {
+            color : pink;
+        }
+        #family > li:nth-child(2n+1) {
+            background-color: cadetblue;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <ul id="family">
+        <li>아빠</li>
+        <li>엄마</li>
+        <li>형</li>
+        <li>누나</li>
+        <li>나</li>
+    </ul>
+
+    <a href="https://www.naver.com">네이버</a>
+
+    <h1>h1</h1>
+    <h2>h2</h2>
+    <h2>h2</h2>
+    <h2>h2</h2>
+
+    <div id="parent">
+        <div>첫째</div>
+        <div>둘째
+            <a>둘째-1</a>
+            <a>둘째-2</a>
+        </div>
+        <span>셋째
+            <div>셋째-1</div>
+            <div>셋째-2</div>
+        </span>
+    </div>
+
+    <h1> h1 입니다. </h1>
+    <h1> h1 입니다. </h1>
+    <p id="content"> p 입니다. </p>
+    <p id="content"> p 입니다. </p>
+
+    <p class="content"> p class 입니다. </p>
+    <p class="content"> p class 입니다. </p>
+    <div class="content"> div class 입니다. </div>
+    <p class="content"> p class 입니다. </p>
+    <p> p 입니다. </p>
+
+    <input type="text">
+    <input type="password">
+
+</body>
+</html>

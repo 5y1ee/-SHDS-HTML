@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+    div {
+        width: 100px;
+        height: 100px;
+    }
+    #box1 {
+        position: fixed;
+        background-color: red;
+        left: 0px;
+        top: 0px;
+    }
+    #box2 {
+        position: absolute;
+        background-color: orange;
+        left:10px;
+        top:-10px;
+    }
+    #box3 {
+        position: absolute;
+        background-color: yellow;
+        top: -20px;
+        left: 20px;
+    }
+    #container {
+        left: 100px;
+        top: 100px;
+        position: relative;
+        /* background-color: blue; */
+        border: 1px solid black;
+        width: 3000px;
+        height: 3000px;
+    }
+
+</style>
+
+<body>
+
+    <div id="container">
+        <div id="box1">박스</div>
+        <div id="box2">박스</div>
+        <div id="box3">박스</div>
+    </div>
+    
+</body>
+</html>

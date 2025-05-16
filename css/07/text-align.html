@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        p {
+            text-align: center;
+        }
+
+        div {
+            width : 500px;
+            text-align: center;
+            height: 100px;
+            line-height: 100px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .shadow1 {
+            color : red;
+            text-shadow: 2px 2px 2px #000;
+        }
+        .shadow2 {
+            color : red;
+            text-shadow: 6px 6px 3px yellow;
+        }
+        .shadow3 {
+            color : red;
+            text-shadow: 6px -6px 20px green;
+        }
+
+        /* font-style, font-variant, font-weight, font-size, font-family */
+        #font {
+            font:normal normal bold 24px 'Moirai One'
+        }
+
+        #box {
+            width: 200px;
+            /* 넘치는거 사라지게 함 */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            /* 줄바꿈 안되게 함 */
+            white-space: nowrap;
+        }
+
+        ol {
+            list-style-type: disc;
+            list-style-type: none;
+
+            /* list-style: ; */
+        }
+        
+    </style>
+
+</head>
+
+<body>
+
+    <ol>
+        <li> 리스트 1 </li>
+        <li> 리스트 2 </li>
+        <li> 리스트 3 </li>
+        <li> 리스트 4 </li>
+        <li> 리스트 5 </li>
+    </ol>
+
+    
+    <div id="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam quia facilis aperiam impedit vitae illum excepturi alias, provident voluptas ducimus fugiat sunt perferendis omnis repellat deserunt vel quae officiis maxime.</div>
+
+    <h1 class="shadow1">HTML</h1>
+    <h1 class="shadow2">CSS</h1>
+    <h1 class="shadow3">JS</h1>
+
+
+
+    <p> p 입니다. </p>
+
+    <div> <a href="">div 입니다.</a> </div>
+    <div> div 입니다. </div>
+    <div> div 입니다. </div>
+    <div id="font"> div 입니다. </div>
+    
+</body>
+
+</html>

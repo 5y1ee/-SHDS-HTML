@@ -1,0 +1,56 @@
+<script>
+
+    // 전개 연산자
+    let arr = [1,2,3];
+    let arr2 = arr;
+    console.log(arr == arr2); // 같은 주소
+    let arr3 = [...arr];
+    console.log(arr == arr3); // 다른 주소
+
+    console.log(arr);
+    console.log(arr2);
+    console.log(arr3);
+
+    let arr4 = [...arr3, 4, 5];
+    console.log(arr4);
+
+
+    let obj1 = {a:1, b:2};
+    let obj2 = {c:3, b:4};
+    let obj3 = {...obj1, ...obj2};
+    console.log(obj3);
+
+    let obj4 = {...obj1, ...obj2, c:5};
+    console.log(obj4);
+
+
+    // 객체 확장 표현식
+    let propertyName = 'name';
+    obj4[propertyName] = 'kim';
+    console.log(obj4);
+
+    let member = {
+        no : 1,
+        propertyName : 'aa'
+    };
+    console.log(member);
+    
+    let member2 = {
+        no : 1,
+        [propertyName] : 'aa'
+    };
+    console.log(member2);
+
+
+    // 구조분해할당
+    let ary = [1,2];
+    let [a, b] = ary;
+    console.log(a, b);
+
+    let ob = {a3:1, b3:2};
+    let {b3, a3} = ob;
+
+
+
+
+</script>

@@ -1,0 +1,96 @@
+<script>
+
+
+    aaa();
+    function aaa() {
+        console.log("Hello");
+    }
+
+    // 익명함수, 변수에 담긴 함수는 밑에서 실행해야 한다..
+    // Uncaught ReferenceError : Cannot access 'bbb' before initialization
+    // bbb();
+    let bbb = function () {
+        console.log("World");
+    }
+    bbb();
+
+    // 화살표 함수
+    // ccc();
+    let ccc = () => {
+        console.log("!");
+    }
+    ccc();
+
+    // 즉시 실행 함수
+    (function () {
+        console.log("IIFE");
+    })();
+
+
+    // 전역변수 지역변수
+    function add() {
+        // var 없으면 전역변수가 됨
+        result = 1+2;
+    }
+    add();
+    console.log(result);
+
+    // Callback
+    function calculator(func, x, y) {
+        var r = func(x, y);
+        return r;
+    }
+
+    var result = calculator(function(a,b) {
+        return a+b;
+    }, 1, 11);
+    console.log(result);
+
+    var result = calculator((a,b)=>a-b, 1, 11);
+    console.log(result);
+
+    let func = function (a, b) {
+        return a*b;
+    };
+    var result = calculator(func, 1, 11);
+    console.log(result);
+
+
+    var result = calculator(function (a,b) {
+        return a+b;
+    }, 1, 11);
+    console.log(result);
+
+    setTimeout(function() {
+        console.log("Hello");
+    }, 1000);
+    console.log("World");
+
+
+    // 골때리네
+    function test() {
+        var text = "안녕";  // 지역변수 text가,, 내부함수의 return값으로 리턴이 돼서 값이 남아있게 된다?
+        return function() { // 내부 함수, 리턴값, 값이 함수
+            return text;
+        }
+    }
+    var t = test();
+    console.log(t());
+
+
+    function test2(name) {
+        var text = "안녕" + name;
+        return function() {
+            return text;
+        }
+    }
+    var t1 = test2("Aaron");
+    var t2 = test2("Judge");
+    console.log(t1());
+    console.log(t2());
+
+    
+
+
+
+</script>

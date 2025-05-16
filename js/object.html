@@ -1,0 +1,59 @@
+<script>
+
+    // 객체 선언 방법.. 그냥 만들어짐..
+    let car = {
+        model:'sonata',
+        color:'white',
+        price:'3000',
+        run : function() {
+            console.log('run');
+        }
+    };
+
+    console.log(typeof car); // object
+    console.log(car);
+    console.log(car.model); // sonata
+
+    car.company = 'hyundai';
+    console.log(car);
+
+    car.stop = function() {
+        console.log('stop');
+    };
+    car.stop();
+
+    let model = 'model';
+    console.log(car[model]);
+
+    // 생성자 함수
+    function Member() {
+        this.login = function() {
+            console.log('login');
+        };
+    }
+    let m = new Member();
+    console.log(typeof m); // object
+
+    console.log(typeof function(){}); // function
+    console.log(typeof new function(){}); // object
+    // 지랄났군...
+
+    m.login();
+
+    // ES6 class
+    class Member2 {
+        constructor(name) {
+            this.name = name;
+        }
+
+        login() {
+            console.log(this.name + ' login');
+        }
+    }
+    let m2 = new Member2('kim');
+    m2.login();
+
+
+
+
+</script>

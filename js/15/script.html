@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <h1 id="heading">JavaScript</h1>
+    <p id="text">click</p>
+
+    <script>
+        let heading = document.querySelector("#heading");
+        console.log(heading);
+        // 익명함수
+        heading.onclick = function() {
+            heading.style.color = "red";
+        }
+
+        // alert('dd')
+        // confirm('ff')
+        // let t = prompt('dd');
+        // console.log(t);
+
+        document.write('dd');
+
+    </script>
+
+
+</body>
+</html>
