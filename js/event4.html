@@ -1,0 +1,17 @@
+<input type="button" value="버튼1">
+<input type="button" value="버튼2">
+<input type="button" value="버튼3">
+
+<script>
+    // input[type='button'] 인 객체를 배열로 가져와서 forEach로 이벤트 넣어주기
+    let buttons = document.querySelectorAll("input[type='button']");
+    console.log(buttons);
+
+    buttons.forEach((element, index) => {
+        element.onclick = function(element) {
+            console.log(this.value);
+        }
+    });
+
+
+</script>

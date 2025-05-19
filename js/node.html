@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        window.onload = function() {
+            
+            let newItem = document.createElement("li");
+
+            // li 객체 안에 들어갈 텍스트 노드 생성
+            let textNode = document.createTextNode('Typescript');
+            newItem.appendChild(textNode);
+
+            // li를 ul에 자식으로
+            document.querySelector("#itemList").appendChild(newItem);
+
+            // 속성 노드 추가
+            let newImg = document.createElement('img');
+            newImg.src = "/img/snow.jpg";
+            document.body.appendChild(newImg);
+
+            // 노드 삭제
+            document.querySelector('h1').remove();
+
+
+
+        }
+
+    </script>
+
+</head>
+<body>
+
+    <h1>Web Prog</h1>
+    
+    <ul id="itemList">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JS</li>
+    </ul>
+
+</body>
+</html>

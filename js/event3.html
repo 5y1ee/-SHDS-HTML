@@ -1,0 +1,29 @@
+<a href="http://naver.com" id="naver">d</a>
+
+<script>
+    document.querySelector("#naver").onclick = function(e) {
+        alert("naver");
+
+        // 기본 이벤트를 취소하는 방법
+        e.preventDefault();
+    }
+</script>
+
+<div onclick="alert('div1')">
+    <div onclick="alert('div2')">
+        <span onclick="alert('span')" id="sp">
+            이벤트
+        </span>
+    </div>
+</div>
+
+<script>
+    document.querySelector('#sp').onclick = function(e) {
+        alert('event');
+        
+        // 이벤트 전파 제거
+        e.stopPropagation();
+
+        console.log(this);
+    }
+</script>

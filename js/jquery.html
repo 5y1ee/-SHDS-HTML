@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        .redText {
+            color: red;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+    
+</head>
+<body>
+    <img id="img" src="/img/bg-img1.png">
+    <h1>h1</h1>
+    <h1>h1</h1>
+    <h1>h1</h1>
+    <h1>h1</h1>
+    <h1>h1</h1>
+
+    <div id="target">
+        <b>dd홍길동</b>
+    </div>
+
+    <script>
+        $("h1").css("color", "blue");
+        lt = $("h1");
+        console.log(lt);
+
+        let ary = [1,2,3,4,5];
+        // $.each
+        $.each(ary, function(index, element) {
+            // console.log(index, element);
+        });
+
+        $("h1").each(function(index, element) {
+            // console.log(index, element);
+        })
+
+        // DOM 조작
+        // 클래스 추가
+        $("h1").addClass("redText");
+        // 클래스 제거
+        $("h1").eq(0).removeClass("redText");
+
+        setTimeout(() => {
+            // console.log($("#img").attr("src", "/img/bg5.jpg"));
+            
+        }, 1000);
+
+        // 속성
+        // console.log($("#img").attr("src", "/img/bg5.jpg"));
+
+        
+        $("#img").attr({
+            src:"/img/snow.jpg",
+            alt:"이미지",
+        })
+
+        // alt 속성 삭제
+        $("#img").removeAttr("alt");
+
+        // 스타일
+        // .css()
+        // 스타일 제거 : remove 가 따로 존재하진 않고 빈 값을 넣어 제거.
+        $("h1").css("color", "");
+
+        // 객체 내부
+        console.log($("#target").text());
+        console.log($("#target").html());
+
+        $("#target").text("<h1>ㅇㅇㅇ</h1>");
+
+
+        // 객체 삭제
+        // $("#target").remove(); // 객체 자체 제거
+        $("#target").empty(); // 자손 제거, 비우기
+
+
+    </script>
+
+</body>
+</html>
