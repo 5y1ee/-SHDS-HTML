@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+
+        $(function() {
+
+            $("#id").val('tmp'); // 매개변수 있으면 setter
+
+            $("input[type='button']").on('click', function() {
+                let v = $("#id").val(); // 매개변수 없으면 getter
+                if ($("#id").val() === '') {
+                    alert('아이디를 입력해주세요.');
+                }
+
+            })
+
+            // 사라지는 효과
+            $('#btn1').click(() => {
+                // $("#div1").hide();
+                // $("#div1").show();
+                // $("#div1").toggle();
+                // $("#div1").toggle(2000);
+                // $("#div1").slideToggle();
+
+                // animate
+                $("#div1")
+                    .animate({left:500})
+                    .animate({top:500});
+            });
+
+        })
+
+    </script>
+
+    <style>
+        #div1 {
+            width: 100px; height: 100px;
+            border: 1px solid #000;
+            position: relative; 
+            /* relative로 설정해야,, 이동가능,, */
+        }
+    </style>
+
+</head>
+<body>
+
+    <input type="button" id="btn1" value="효과">
+    <div id="div1"></div>
+    <hr>
+
+    <input type="text" id="id"><br>
+    <input type="button" value="login">
+    
+    
+</body>
+</html>

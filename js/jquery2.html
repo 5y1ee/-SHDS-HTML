@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+
+        window.onload = () => {
+            console.log('window.onload');
+        }
+
+        // DOMContentLoaded와 동일
+        $(function(){
+            console.log("$$")
+
+            // 요소 객체 생성 $(문자열)
+            $('<div>넷째</div>').appendTo("#parent"); // parent로 덧붙여라
+            $('#parent').append('<div>넷째</div>'); // parent에 덧붙여라. parent 안 쪽 끝에 붙임
+
+            // 바닐라js로 하려면, 노드 만들고 노드 붙이고 등등 과정을 거쳐야함. (계층 구조가 복잡하면 그만큼 더 길어짐)
+            // jquery를 쓰면 그냥 문자열로 객체 만들고 append 해버리면 됨..
+
+            $('#parent').after('<div>이모</div>'); // parent뒤에 덧붙여라.
+            // before, insert, prepend -> XXXto 등등 많음
+
+
+            // 이동
+            $('#first').appendTo('#third');
+
+            // 복제
+            $('#first').clone().appendTo('#third');
+
+            // 이벤트
+            $('#third').on('click', function() {alert('third')});
+            $('#first').bind('click', function() {alert('first')});
+            $('#second').click(function() {alert('second')});
+
+
+
+        })
+
+        // DOMContentLoaded와 동일
+        $(document).ready(function() {
+            console.log('document ready');
+
+            let x;
+            $('#start').click(() => {
+                x = setInterval(() => {
+                $('#cnt').html( Number($('#cnt').html())+1 );
+                $('#cnt').val( Number($('#cnt').val())+1 );
+                
+                console.log('dd');
+                }, 1000);
+            });
+
+            $('#end').click(() => {clearInterval(x);})
+        });
+
+
+    </script>
+
+</head>
+<body>
+    
+    <div id="parent">
+        <div id="first">첫째</div>
+        <div id="second">둘째</div>
+        <div id="third">셋째</div>
+    </div>
+
+
+    <!-- <div id="cnt">0</div> -->
+    <input id="cnt" value="0"></input>
+    <button id="start">시작</button>
+    <button id="end">종료</button>
+
+
+
+</body>
+</html>

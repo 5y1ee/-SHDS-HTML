@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+
+        $(function() {
+            $("#btn").click(function() {
+                $.ajax({
+                    // url : 'jquery3.html',  // http://localhost:5500/js/nodeDelete.html
+                    // success : (res)=>{
+                    //     console.log(res);
+                    //     $("#div1").html(res);
+                    // },
+
+                    url : 'https://jsonplaceholder.typicode.com/posts',
+                    data : {
+                        // parameter : 서버로 보내는 내용
+                        page : 2
+                    },
+                    method : 'get',
+                    cache : false, // 기본 true
+                    async : true, // 비동기 여부
+                    dataType : 'JSON', // 문서 타입
+                    success : (res) => {
+                        let html = "";
+                        html += "<table border='1'>";
+                        html += "<tr><th>번호</th><th>제목</th></tr>";
+                        $.each(res, (i,e)=>{
+                            console.log(i, e);
+                            html += "<tr><td>"+e.id+"</td><td>"+e.title+"</td></tr>"
+                        });
+                        html += "</table>";
+                        $("#div1").append(html);
+                    },
+                    error : function(e) {
+                        console.log(e);
+                    }
+
+                })
+            })
+        });
+
+
+    </script>
+
+</head>
+<body>
+
+    <input type="button" value="AJAX" id="btn">
+    <div id="div1"></div>
+    
+</body>
+</html>

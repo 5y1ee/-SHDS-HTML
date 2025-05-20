@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+
+    window.onload = function() {
+        let req = new XMLHttpRequest();
+        req.open('GET', 'https://jsonplaceholder.typicode.com/posts');
+        req.send();
+
+        // setTimeout(() => {
+        //     console.log(req.response);
+        // }, 1000);
+
+
+        req.onreadystatechange = () => {
+            // if (req.readyState == 
+            console.log("readyState:" + req.readyState);
+            console.log("status:" + req.status);
+
+            if (req.readyState === 4) {
+                // console.log("response:" + req.response);
+            }
+        }
+
+        // setTimeout(() => {
+        // }, timeout);
+
+        // setInterval(() => {
+        //     console.log("interval");
+        // }, 1000);
+
+        let num=0;
+        document.querySelector("#start").onclick = () => {
+            setInterval(() => {
+                console.log(num);
+                ++num;
+                document.getElementById("text").value = num;
+            }, 1000);
+        }
+        
+        document.querySelector("#end").onclick = () => {
+            clearInterval();
+        }
+
+        // document.querySelector("#text").value = num;
+
+
+        // Promise (ES8)
+        function test(func) {
+            return new Promise(function(resolve, reject) {
+                setTimeout(function() {
+                    resolve('문자열');
+                }, 500);
+            });
+        }
+        test().then(function(arg) {
+            console.log(arg);
+        });
+
+        console.log('main 흐름');
+
+        // 비동기를 동기적으로 처리
+        async function test2() {
+            let result = await test(function(arg) {
+                return arg;
+            });
+            console.log('test2:'+result);
+        };
+        test2();
+
+
+        // ajax
+        fetch('url')
+            .then(res=>res.json())
+            .then(json=>console.log(json));
+
+
+    };
+
+
+</script>
+<body>
+    <input id="text" type="text"></input>
+
+    <button id="start">시작</button>
+    <button id="end">종료</button>
+
+</body>
+</html>
